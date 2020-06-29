@@ -1,5 +1,4 @@
 # ResponsiveNavBar
-<br>
 
 ## Collapsible Nav-items
 
