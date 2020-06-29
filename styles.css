@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background-color: rgb(17, 17, 17);
+  color: white;
+  display: flex;
+  height: 6vh;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+}
+
+nav ul {
+  display: flex;
+  width: 50%;
+  justify-content: space-evenly;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.burger {
+  display: none;
+}
+
+.burger:hover {
+  cursor: pointer;
+}
+
+.burger .line1,
+.burger .line3 {
+  transition: transform 0.5s;
+}
+
+div.burger div {
+  width: 25px;
+  height: 1px;
+  background-color: white;
+  margin: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .burger {
+    display: initial;
+  }
+  .nav-items {
+    position: absolute;
+    background-color: rgb(17, 17, 17);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 6vh;
+    height: 30vh;
+    z-index: -1;
+    /* moving it out of sight */
+    transform: translateY(-135%);
+    transition: transform 0.5s ease-in;
+  }
+  .nav-items li {
+    opacity: 0;
+  }
+
+  .crossed .line1 {
+    transform: rotate(-45deg) translate(-3px, 3px);
+  }
+  .crossed .line2 {
+    visibility: hidden;
+  }
+  .crossed .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  .nav-active {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes upAppear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
+}
